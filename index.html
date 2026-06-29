@@ -1,155 +1,249 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Girl Book Club</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Girl Book Club</title>
 
-<style>
-body{
-  font-family: Arial, sans-serif;
-  margin:0;
-  background:#f6efff;
-  color:#333;
-}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-header{
-  background:#7b4bc4;
-  color:white;
-  padding:20px;
-  text-align:center;
-}
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #FFE5EC;
+      /* Rosa bem clarinho */
+      color: #4A3E4D;
+    }
 
-section{
-  background:white;
-  margin:20px;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+    header {
+      background: #FF4D8D;
+      /* Rosa vibrante */
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(255, 77, 141, 0.2);
+    }
 
-h2{
-  color:#7b4bc4;
-}
+    header p {
+      margin: 5px 0 0;
+      font-style: italic;
+    }
 
-.membros{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-  gap:10px;
-}
+    section {
+      background: white;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(255, 77, 141, 0.08);
+    }
 
-.card{
-  background:#f3e8ff;
-  padding:10px;
-  border-radius:10px;
-  text-align:center;
-}
+    h2 {
+      color: #FF1493;
+      /* Deep Pink */
+      border-bottom: 2px solid #FFC2D1;
+      padding-bottom: 5px;
+    }
 
-table{
-  width:100%;
-  border-collapse:collapse;
-}
+    .membros {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 10px;
+    }
 
-td,th{
-  border-bottom:1px solid #ddd;
-  padding:8px;
-}
+    .card {
+      background: #FFE5EC;
+      /* Rosa claro para os cards */
+      color: #A32A53;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: bold;
+    }
 
-.roleta{
-  font-size:60px;
-  text-align:center;
-  color:#d14fa6;
-}
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-.resultado{
-  font-size:90px;
-  text-align:center;
-  color:#7b4bc4;
-  font-weight:bold;
-}
+    td,
+    th {
+      border-bottom: 1px solid #FFC2D1;
+      padding: 8px;
+    }
 
-button{
-  background:#7b4bc4;
-  color:white;
-  border:none;
-  padding:10px 15px;
-  border-radius:10px;
-  cursor:pointer;
-}
+    th {
+      color: #FF1493;
+      text-align: left;
+    }
 
-button:hover{
-  background:#5e36a3;
-}
-</style>
+    .roleta {
+      font-size: 60px;
+      text-align: center;
+      color: #FF4D8D;
+    }
+
+    .resultado {
+      font-size: 90px;
+      text-align: center;
+      color: #FF1493;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .botoes-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    button {
+      background: #FF4D8D;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #FF1493;
+    }
+
+    .btn-reset {
+      background: #FFC2D1;
+      color: #A32A53;
+    }
+
+    .btn-reset:hover {
+      background: #FFA5BA;
+    }
+
+    /* Botão Flutuante do WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: #FFF;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      color: #FFF;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>📚 Girl Book Club</h1>
-  <p>"Lendo histórias, criando memórias 💜"</p>
-</header>
+  <header>
+    <h1>📚 Girls Book Club</h1>
+    <p>"Lendo histórias, criando memórias. 🩷"</p>
+  </header>
 
-<section>
-<h2>✨ Livro do Mês</h2>
+  <section>
+    <h2>✨ Livro do Mês</h2>
 
-<p><b>Por Lugares Incríveis</b><br>
-Jennifer Niven</p>
+    <p><b>Por Lugares Incríveis</b><br>
+      Jennifer Niven</p>
 
-<p>💬 Uma história emocionante sobre dois adolescentes que se ajudam em momentos difíceis.</p>
+    <p>💬 Uma história emocionante sobre dois adolescentes que se ajudam em momentos difíceis.</p>
 
-<p><b>Encontro:</b> 15/07/2026</p>
-<p><b>Avaliação:</b> -- /10</p>
-</section>
+    <p><b>Encontro:</b> 15/07/2026</p>
+    <p><b>Avaliação:</b> -- /10</p>
+  </section>
 
-<section>
-<h2>👭 Membros</h2>
+  <section>
+    <h2>👭 Membros</h2>
 
-<div class="membros">
-  <div class="card">Rubea Santos</div>
-  <div class="card">Rubênnia Santos</div>
-  <div class="card">Lidia Santos</div>
-  <div class="card">Ligia Santos</div>
-  <div class="card">Livya Santos</div>
-</div>
-</section>
+    <div class="membros">
+      <div class="card">Rubea Santos</div>
+      <div class="card">Rubênnia Santos</div>
+      <div class="card">Lidia Santos</div>
+      <div class="card">Ligia Santos</div>
+      <div class="card">Livya Santos</div>
+    </div>
+  </section>
 
-<section>
-<h2>📚 Biblioteca</h2>
+  <section>
+    <h2>📚 Biblioteca</h2>
 
-<table>
-<tr><th>Livro</th><th>Nota</th></tr>
-<tr><td>O Deus que Destrói Sonhos</td><td>9,5</td></tr>
-<tr><td>Teto Para Dois</td><td>4,2</td></tr>
-<tr><td>O Acordo</td><td>8,7</td></tr>
-<tr><td>Jantar Secreto</td><td>8,0</td></tr>
-</table>
-</section>
+    <table>
+      <tr>
+        <th>Livro</th>
+        <th>Nota</th>
+      </tr>
+      <tr>
+        <td>O Deus que Destrói Sonhos</td>
+        <td>9,5</td>
+      </tr>
+      <tr>
+        <td>Teto Para Dois</td>
+        <td>4,2</td>
+      </tr>
+      <tr>
+        <td>O Acordo</td>
+        <td>8,7</td>
+      </tr>
+      <tr>
+        <td>Jantar Secreto</td>
+        <td>8,0</td>
+      </tr>
+    </table>
+  </section>
 
-<section>
-<h2>📅 Agenda</h2>
-<p>📖 Próximo encontro: 15/07/2026</p>
-</section>
+  <section>
+    <h2>📅 Agenda</h2>
+    <p>📖 Próximo encontro: 15/07/2026</p>
+  </section>
 
-<section>
-<h2>🎡 Roleta de Livros</h2>
+  <section>
+    <h2>🎡 Roleta de Livros</h2>
 
-<div class="roleta">🎲</div>
-<div class="resultado" id="resultado">--</div>
+    <div class="roleta" id="roletaIcone">🎲</div>
+    <div class="resultado" id="resultado">--</div>
 
-<center>
-<button onclick="girar()">Girar roleta</button>
-</center>
-</section>
+    <div class="botoes-container">
+      <button onclick="girar()">Girar roleta</button>
+      <button class="btn-reset" onclick="resetar()">Resetar</button>
+    </div>
+  </section>
 
-<script>
-function girar(){
-  const numero = Math.floor(Math.random()*30)+1;
+  <a href="#" class="whatsapp-float" target="_blank" title="Grupo do Clube">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 
-  document.querySelector(".roleta").innerText = numero;
-  document.getElementById("resultado").innerText = numero;
-}
-</script>
+  <script>
+    function girar() {
+      const numero = Math.floor(Math.random() * 30) + 1;
+
+      // document.getElementById("roletaIcone").innerText = numero;
+      document.getElementById("resultado").innerText = numero;
+    }
+
+    function resetar() {
+      document.getElementById("roletaIcone").innerText = "🎲";
+      document.getElementById("resultado").innerText = "--";
+    }
+  </script>
 
 </body>
+
 </html>
